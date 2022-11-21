@@ -1,0 +1,68 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+
+html,
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Panton Regular', sans-serif;
+  background: $bg-main-color;
+  font-size: $main-text-size;
+
+  overflow-x: hidden;
+  color: $main-text-color;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: size(1460px);
+  margin: 0 auto;
+  padding: 0 size(10px);
+}
+
+
+.min-container {
+  max-width: size(1160px);
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $nav-link-color;
+  cursor: pointer;
+}
+
+button {
+  background: transparent;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}

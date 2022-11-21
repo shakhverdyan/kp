@@ -1,0 +1,72 @@
+@import 'fonts.scss';
+@import 'variables.scss';
+
+.footer {
+  margin-top: size(30px);
+  background: rgba(0, 0, 0, 0.71);
+  backdrop-filter: blur(500px);
+
+  &__menu {
+    @include breakpoint(sm) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 10px;
+      text-align: center;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: size(40px) 0;
+
+    @include breakpoint(sm) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+
+
+  &__list {
+    margin-bottom: size(6px);
+
+    &:last-child {
+      @include breakpoint(sm) {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  // .footer__link
+
+  &__link {
+    color: $whote-color;
+  }
+
+  // .footer__form
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+
+
+    & input {
+      background: #FFFCE0;
+      padding: 6px 15px;
+      margin-bottom: size(10px);
+      outline: none;
+    }
+  }
+
+  &__send {
+    background: $title-color;
+    padding: size(10px);
+    max-width: size(115px);
+    color: $link-color;
+  }
+}

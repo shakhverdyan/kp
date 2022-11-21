@@ -1,0 +1,126 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+
+
+.special {
+
+  // .special_bg
+
+  &_bg {
+
+    max-width: 1440px;
+    margin: 0 auto;
+    background-image: -webkit-image-set(url('../images/bgslider@1x.png') 1x,
+        url('../images/bgslider@2x.png') 2x,
+        url('../images/bgslider@1x.webp') 1x,
+        url('../images/bgslider@2x.webp') 2x,
+      );
+    background-image: image-set(url('../images/bgslider@1x.png') 1x,
+        url('../images/bgslider@2x.png') 2x,
+        url('../images/bgslider@1x.webp') 1x,
+        url('../images/bgslider@2x.webp') 2x,
+      );
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center bottom 2%;
+  }
+
+  // .special__title
+
+  &__title {
+    font-weight: 700;
+    margin-top: size(77px);
+    margin-bottom: size(19px);
+    font-size: $title;
+    line-height: size(61px);
+    text-transform: uppercase;
+    color: #181818;
+
+    @include breakpoint(md) {
+      font-size: $p40;
+      line-height: size(43px);
+    }
+
+    @include breakpoint(sm) {
+      font-size: size(18px);
+      line-height: size(24px);
+    }
+
+    span {
+      display: block;
+    }
+
+  }
+
+  &__sub-tltle {
+    color: $title-color;
+    display: block;
+    text-align: right;
+  }
+
+  // .special__goods
+
+  &__goods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 376px));
+    column-gap: 16px;
+    justify-content: center;
+    margin-bottom: size(260px);
+  }
+
+  // .special__item
+
+  &__item {
+    margin-bottom: size(50px);
+  }
+
+  // .special__picture
+
+  &__picture {
+    margin-bottom: size(19px);
+  }
+}
+
+
+.item {
+
+  // .item_one
+
+  &_one {
+    transform: rotate(-18.29deg);
+    font-size: size(36px);
+    line-height: size(44px);
+    color: #39B54A;
+    margin: auto;
+    position: relative;
+
+    @include breakpoint(md) {
+      margin: 33px auto 59px;
+    }
+
+    @include breakpoint(sm) {
+      font-size: size(22px);
+      line-height: size(26px);
+      margin: 23px auto 49px;
+    }
+
+    &::before {
+      content: '';
+      background: url(../images/circle.png) no-repeat center;
+      display: block;
+      background-size: 100%;
+      position: absolute;
+      top: -59px;
+      left: -34px;
+      width: size(332px);
+      height: size(160px);
+      transform: rotate(19deg);
+
+      @include breakpoint(sm) {
+        background-size: 60%;
+        top: -67px;
+        left: -88px;
+      }
+    }
+  }
+}

@@ -1,0 +1,367 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+
+.hero {
+  &__picture {
+    position: relative;
+    left: -8px;
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+  }
+
+  &__bottom_wrap {
+    margin-top: size(280px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(lg) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include breakpoint(sm) {
+      margin-top: size(75px);
+    }
+  }
+
+  &__info {
+    color: $whote-color;
+    flex-basis: 43%;
+
+
+    div {
+      max-width: size(525px);
+    }
+
+    h2 {
+      font-family: 'Panton Semi-Bold', sans-serif;
+      font-size: $h2 ;
+      line-height: size(76px);
+      font-weight: 700;
+      text-transform: uppercase;
+
+      @include breakpoint(xl) {
+        font-size: $p46;
+        line-height: size(50px);
+      }
+
+      @include breakpoint(sm) {
+        font-size: size(36px);
+        line-height: size(50px);
+      }
+    }
+
+    p {
+      font-family: 'Panton Regular';
+      font-size: $p40 ;
+      line-height: size(48px);
+      font-weight: normal;
+      margin-bottom: size(30px);
+
+      @include breakpoint(sm) {
+        font-size: $p24;
+        line-height: size(30px);
+      }
+
+      span {
+        font-weight: bold;
+        margin-top: size(9px);
+      }
+    }
+  }
+
+  &__title {
+    font-family: 'Panton Bold', sans-serif;
+    font-size: $h1;
+    line-height: size(106px);
+    margin-bottom: size(19px);
+    color: $h1-color;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    @include breakpoint(lg) {
+      font-size: $h2;
+      line-height: size(70px);
+    }
+
+    @include breakpoint(sm) {
+      font-size: $p40;
+      line-height: size(50px);
+    }
+  }
+
+  &__sub-title {
+    font-size: $p19;
+    line-height: size(23px);
+    color: $h1-color;
+    text-align: center;
+    font-family: 'Panton Regular', sans-serif;
+    max-width: 953px;
+    margin: 0 auto;
+    margin-bottom: size(27px);
+  }
+
+  &__btn {
+
+    margin: 0 auto;
+    display: block;
+  }
+
+  &_container {
+    background: url('../images/bg-top2@1x.png'), url('../images/bg-top1@1x.png'), url('../images/bg-top2@1x.webp'), url('../images/bg-top1@1x.webp');
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+
+    @media(min-resolution:2dppx),
+    (min-width: 1900px) {
+      background: url('../images/bg-top2@2x.png'), url('../images/bg-top1@2x.png'), url('../images/bg-top2@2x.webp'), url('../images/bg-top1@2x.webp');
+      background-repeat: no-repeat, no-repeat;
+      background-size: cover, cover;
+      background-position: center, center;
+    }
+
+    padding-bottom: size(40px);
+
+    @include breakpoint(md) {
+      background-position: left 56% top;
+    }
+  }
+
+  // .hero__bg
+  &__bg {
+    max-width: size(1268px);
+    margin: 0 auto;
+
+  }
+
+  // .hero__logo
+  &__logo {
+    .logo_icon {
+      width: size(163px);
+      height: 49px;
+    }
+
+  }
+
+  // .hero__nav
+
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: size(22px);
+  margin-bottom: size(146px);
+
+  @include breakpoint(lg) {
+    margin-bottom: size(66px);
+  }
+
+  @include breakpoint(sm) {
+    margin-bottom: size(46px);
+  }
+}
+
+.icon {
+  width: size(144px)
+}
+
+.nav {
+
+  // .nav_list
+
+  &_list {
+    display: flex;
+
+
+    @include breakpoint(md) {
+      flex-direction: column;
+      position: absolute;
+      right: 25px;
+      top: 110px;
+      transform: translateX(160%);
+      transition: all .5s;
+
+      & .nav__link {
+        color: $whote-color;
+      }
+    }
+
+
+    &_active {
+      flex-direction: column;
+      position: fixed;
+      z-index: 99;
+      transform: translateX(0);
+      transition: all .5s;
+
+      & .nav__link {
+        color: $whote-color;
+      }
+
+      &:before {
+
+        content: "";
+        background: red;
+        width: size(250px);
+        position: absolute;
+        height: 100vh;
+        right: -25px;
+        top: -110px;
+        z-index: -1;
+
+      }
+    }
+
+    &_item:not(:last-child) {
+      margin-right: size(54px);
+    }
+
+
+  }
+
+
+  &__list_item {
+    margin-right: size(20px);
+
+    @include breakpoint(md) {
+      margin-bottom: size(10px);
+      margin-right: 0;
+    }
+  }
+
+
+
+  // .nav__link
+
+  &__link {
+    font-size: $btnSize;
+    line-height: size(30px);
+    color: $nav-link-color;
+    font-family: 'Panton Semi-Bold', sans-serif;
+    font-weight: 800;
+  }
+
+
+}
+
+.btn {
+  background: $btnColor;
+  color: $link-color;
+  text-transform: uppercase;
+  font-size: $btnSize;
+  line-height: size(27px);
+  padding: size(10px) size(25px);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.btn:hover .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg);
+  animation: flareAnimation;
+  left: -150%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+  animation: flareAnimation 1s linear;
+}
+
+@keyframes flareAnimation {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+.mob_burger {
+  display: none;
+  // position: relative;
+  // right: 12px;
+  // top: 11%;
+  z-index: 105;
+
+  @include breakpoint(md) {
+    display: block;
+    margin-left: auto;
+  }
+
+  & span {
+    display: block;
+    width: size(50px);
+    height: size(6px);
+    background: #000000;
+    position: relative;
+    transition: all .5s;
+
+
+    &:before {
+      content: '';
+      display: block;
+      width: size(50px);
+      height: size(6px);
+      background: #000000;
+      position: absolute;
+      top: -10px;
+      transition: all .5s;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: size(50px);
+      height: size(6px);
+      background: #000000;
+      position: absolute;
+      top: 10px;
+      transition: all .5s;
+    }
+  }
+
+  &-active {
+    position: fixed;
+    right: 10px;
+
+    transition: all .5s;
+
+    & span {
+      display: block;
+      width: size(50px);
+      height: size(6px);
+      background: transparent;
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        width: size(50px);
+        height: size(6px);
+        background: #ffffff;
+        position: absolute;
+        top: 0px;
+        transform: rotate(45deg)
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        width: size(50px);
+        height: size(6px);
+        background: #ffffff;
+        position: absolute;
+        top: 0px;
+        transform: rotate(-45deg)
+      }
+    }
+  }
+}

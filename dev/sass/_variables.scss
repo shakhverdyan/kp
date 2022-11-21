@@ -1,0 +1,77 @@
+$bg-main-color: #fff;
+$btnColor: #00AEBE;
+$footer: rgba(0, 0, 0, 0.41);
+
+
+
+$main-text-color: #1E1E1E;
+$link-color: #fff;
+$title-color: #BF065D;
+$whote-color: #fff;
+$nav-link-color: #2F2F2F;
+$h1-color: #3C3C3C;
+
+
+$main-text-size: 16px;
+$h1: size(89px);
+$h2: size(63px);
+$p19: size(19px);
+$p20: size(20px);
+$p24: size(24px);
+$p40: size(40px);
+$p46: size(46px);
+$btnSize: size(18px);
+$title: size(51px);
+$title94: size(94px);
+
+
+
+
+
+
+//новая функция px to rem
+@use 'sass:math';
+
+@function size($px, $rem: 16px) {
+  @return math.div($px, $rem)*1rem;
+}
+
+
+
+@mixin breakpoint($point) {
+  @if $point==xxl {
+    @media (max-width:1400px) {
+      @content;
+    }
+  }
+
+  @else if $point==xl {
+    @media (max-width:1200px) {
+      @content;
+    }
+  }
+
+  @else if $point==lg {
+    @media (max-width:992px) {
+      @content;
+    }
+  }
+
+  @else if $point==md {
+    @media (max-width:768px) {
+      @content;
+    }
+  }
+
+  @else if $point==sm {
+    @media (max-width:576px) {
+      @content;
+    }
+  }
+
+  @else if $point==ssm {
+    @media (max-width:375px) {
+      @content;
+    }
+  }
+}

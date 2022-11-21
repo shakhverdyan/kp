@@ -1,0 +1,113 @@
+@import 'variables.scss';
+@import 'fonts.scss';
+
+
+.swiper {
+  padding-bottom: size(127px);
+
+  @include breakpoint(lg) {
+    padding-bottom: size(80px);
+  }
+}
+
+.swiper-wrapper {
+  @include breakpoint(md) {
+    left: 0 !important;
+  }
+}
+
+.swiper-slide img {
+  object-fit: cover;
+  height: 350px;
+}
+
+.swiper-slide {
+  img {
+    width: 750px;
+
+
+    @include breakpoint(md) {
+      object-fit: cover;
+      max-height: 509px;
+    }
+  }
+}
+
+.swiper-button-prev:after {
+  font-family: '';
+  background-image: url(../images/arrow.svg);
+  content: '';
+  width: 92px;
+  height: 60px;
+  background-size: cover;
+  transform: rotate(180deg)
+}
+
+.swiper-button-next:after {
+  font-family: '';
+  background-image: url(../images/arrow.svg);
+  content: '';
+  width: 92px;
+  height: 60px;
+  background-size: cover;
+
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+
+  position: relative;
+  width: 92px;
+
+}
+
+.swiper-button-prev {
+  left: 12%;
+  top: size(86px);
+
+  @include breakpoint(lg) {
+    left: 40%;
+    transform: translateX(-50%);
+    top: size(48px);
+  }
+
+  @include breakpoint(sm) {
+    left: 34%;
+  }
+}
+
+.swiper-button-next {
+  top: size(64px);
+  left: 20%;
+
+  @include breakpoint(lg) {
+    left: 60%;
+    transform: translateX(-50%);
+    top: size(26px);
+  }
+
+  @include breakpoint(sm) {
+    left: 66%;
+  }
+}
+
+.swiper-wrapper {
+  left: 140px;
+}
+
+.slider.swiper-horizontal>.swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+  width: 63%;
+  height: 4px;
+  left: 31%;
+  bottom: 83px;
+  top: auto;
+
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
+
+.slider .swiper-pagination-progressbar-fill {
+  background-color: #fff;
+}
